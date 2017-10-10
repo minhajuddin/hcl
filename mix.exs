@@ -1,4 +1,4 @@
-defmodule Hcl.Mixfile do
+defmodule HCL.Mixfile do
   use Mix.Project
 
   def project do
@@ -17,14 +17,16 @@ defmodule Hcl.Mixfile do
   def application do
     [
       extra_applications: [:logger],
-      mod: {Hcl.Application, []}
+      mod: {HCL.Application, []}
     ]
   end
 
   # Run "mix help deps" to learn about dependencies.
   defp deps do
     [
+      #{:http_parser, ">= 0.0.0"},
       {:http_parser, path: "../http_parser"},
+      {:connection, "> 0.0.0"},
 
       {:ex_doc, ">= 0.0.0", only: :dev},
     ]

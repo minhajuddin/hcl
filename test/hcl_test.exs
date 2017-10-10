@@ -1,8 +1,14 @@
-defmodule HclTest do
+defmodule HCLTest do
   use ExUnit.Case
-  doctest Hcl
+  doctest HCL
 
-  test "greets the world" do
-    assert Hcl.hello() == :world
+  alias HttpParser.Response
+
+  describe "get" do
+
+    test "gets a simple response" do
+      assert {:ok, %Response{status_code: 200}} = HCL.get("http://httpstat.us/200")
+    end
+
   end
 end

@@ -1,4 +1,4 @@
-defmodule Hcl.Application do
+defmodule HCL.Application do
   # See https://hexdocs.pm/elixir/Application.html
   # for more information on OTP Applications
   @moduledoc false
@@ -8,13 +8,13 @@ defmodule Hcl.Application do
   def start(_type, _args) do
     # List all child processes to be supervised
     children = [
-      # Starts a worker by calling: Hcl.Worker.start_link(arg)
-      # {Hcl.Worker, arg},
+      # Starts a worker by calling: HCL.Worker.start_link(arg)
+      # {HCL.Worker, arg},
     ]
 
     # See https://hexdocs.pm/elixir/Supervisor.html
     # for other strategies and supported options
-    opts = [strategy: :one_for_one, name: Hcl.Supervisor]
+    opts = [strategy: :one_for_one, name: HCL.Supervisor]
     Supervisor.start_link(children, opts)
   end
 end
